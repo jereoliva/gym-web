@@ -1,0 +1,103 @@
+/* ==========================================================================
+   FUERZA BRUTA - PANTALLA DE ACCESO (LOGIN)
+   ========================================================================== */
+
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--color-bg-asfalto) 0%, var(--color-bg-carbon) 100%);
+}
+
+.login-container {
+    background-color: var(--color-bg-carbon);
+    border: var(--borde-industrial);
+    padding: 4rem 3rem;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Detalle visual superior en magenta */
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-magenta-vibrante);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.login-header p {
+    color: var(--color-cian-electrico);
+    font-family: var(--font-tech);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 0.5rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.input-group label {
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.input-group input {
+    background-color: var(--color-bg-asfalto);
+    border: 1px solid #333;
+    padding: 1rem;
+    color: var(--color-texto-principal);
+    font-family: var(--font-tech);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color var(--transicion-rapida), box-shadow var(--transicion-rapida);
+}
+
+.input-group input:focus {
+    border-color: var(--color-cian-electrico);
+    box-shadow: 0px 0px 10px rgba(0, 240, 255, 0.1);
+}
+
+.btn-login {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.login-footer {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.link-secundario {
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+    transition: color var(--transicion-rapida);
+}
+
+.link-secundario:hover {
+    color: var(--color-cian-electrico);
+}

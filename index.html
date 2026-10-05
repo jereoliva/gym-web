@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym-generico | Saca tu verdadero potencial</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-container">
+            <span class="logo-text">Gym-generico</span>
+        </div>
+        <nav>
+            <!-- Reemplaza tu lista de navegación actual con esta -->   
+            <ul class="nav-links">
+                <li><a href="#instalaciones">Instalaciones</a></li>
+                <li><a href="#planes">Planes</a></li>
+                <li><a href="#horarios">Horarios</a></li>
+                <li><a href="login.html" class="btn-outline">Ingresar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Agregada clase fade-in -->
+        <section id="hero" class="hero-section fade-in">
+            <div class="hero-content">
+                <h1>Supera tus límites diarios</h1>
+                <p>Equipamiento de alto rendimiento y control total de tu entrenamiento.</p>
+                <a href="#planes" class="btn-primary">Ver Membresías</a>
+            </div>
+        </section>
+
+        <!-- Agregada clase fade-in -->
+        <section id="planes" class="planes-section fade-in">
+            <h2>Planes de Entrenamiento</h2>
+            <div class="planes-grid" id="planes-container"></div>
+        </section>
+
+        <section id="horarios" class="horarios-section fade-in">
+            <h2>Horarios y Disciplinas</h2>
+            <div class="table-container-public">
+                <table class="public-table">
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Lunes - Miércoles - Viernes</th>
+                            <th>Martes - Jueves</th>
+                            <th>Sábados</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>08:00 - 10:00</td>
+                            <td>Fuerza Base / Musculación</td>
+                            <td>Halterofilia Técnica</td>
+                            <td>Open Box</td>
+                        </tr>
+                        <tr>
+                            <td>14:00 - 16:00</td>
+                            <td>Acondicionamiento Físico</td>
+                            <td>Fuerza Base / Musculación</td>
+                            <td>Cerrado</td>
+                        </tr>
+                        <tr>
+                            <td>18:00 - 21:00</td>
+                            <td>Fuerza Bruta Total (Grupal)</td>
+                            <td>Fuerza Bruta Total (Grupal)</td>
+                            <td>Cerrado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="galeria" class="galeria-section fade-in">
+            <!-- Corregido el ID para que coincida con el menú de navegación -->
+            <h2 id="instalaciones">Nuestras Instalaciones</h2>
+            <div class="galeria-grid">
+                <div class="foto-card"><img src="imagen/foto1.jpg" alt="Área de Musculación"></div>
+                <div class="foto-card"><img src="imagen/foto2.jpg" alt="Zona de Peso Libre"></div>
+                <div class="foto-card"><img src="imagen/foto3.jpg" alt="Equipamiento Cardio"></div>
+                <div class="foto-card"><img src="imagen/foto4.jpg" alt="Fachada Fuerza Bruta"></div>
+            </div>
+        </section>
+    </main> <!-- Único cierre de main correcto -->
+
+    <footer class="footer fade-in">
+        <div class="footer-content">
+            <span class="logo-text">FUERZA BRUTA</span>
+            <p>&copy; 2026 Todos los derechos reservados. Bahía Blanca, Argentina.</p>
+            <a href="https://instagram.com/fuerzabruta" target="_blank" class="instagram-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-magenta-vibrante)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                Síguenos en Instagram
+            </a>
+        </div>
+    </footer>
+
+    <!-- Reemplaza el número 549... por el número real -->
+    <a href="https://wa.me/5492910000000" target="_blank" class="whatsapp-float">
+        <svg viewBox="0 0 32 32" width="32" height="32" fill="#fff"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.8.72 5.518 2.087 7.93l-2.087 8.07 8.275-2.17c2.385 1.258 5.074 1.92 7.725 1.92 8.837 0 16-7.163 16-16s-7.163-16-16-16zm8.134 23.11c-.347.98-2.003 1.848-2.775 1.947-.732.095-1.65.255-5.26-1.243-4.364-1.81-7.2-6.248-7.416-6.536-.217-.287-1.775-2.366-1.775-4.515s1.12-3.2 1.523-3.627c.403-.427.873-.532 1.16-.532.288 0 .576 0 .823.012.26.012.607-.095.952.748.36.88 1.206 2.946 1.31 3.16.104.213.174.464.043.727-.13.264-.195.427-.39.667-.195.24-.408.513-.585.714-.195.213-.404.444-.165.854.24.41 1.066 1.76 2.292 2.853 1.583 1.41 2.906 1.848 3.325 2.053.418.205.66.166.906-.115.246-.282 1.055-1.228 1.338-1.65.283-.423.567-.353.944-.213.376.14 2.378 1.12 2.784 1.323.405.203.675.305.773.473.098.168.098.98-.25 1.96z"/></svg>
+    </a>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

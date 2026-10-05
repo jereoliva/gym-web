@@ -1,0 +1,453 @@
+/* ==========================================================================
+   FUERZA BRUTA - SISTEMA DE DISEÑO GLOBAL
+   ========================================================================== */
+
+/* Importación de tipografías industriales y técnicas */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    /* Paleta de Colores - Identidad Fuerza Bruta */
+    --color-bg-asfalto: #0D0D0D;
+    --color-bg-carbon: #1A1A1A;
+    --color-cian-electrico: #00F0FF;
+    --color-magenta-vibrante: #FF003C;
+    --color-bronce: #C5832B;
+    --color-texto-principal: #F2F2F2;
+    --color-texto-secundario: #A0A0A0;
+
+    /* Tipografías */
+    --font-display: 'Oswald', sans-serif;
+    --font-tech: 'Inter', sans-serif;
+
+    /* Espaciados y Bordes */
+    --borde-industrial: 2px solid var(--color-bronce);
+    --radio-boton: 0px; /* Estilo duro, sin bordes redondeados */
+    --transicion-rapida: 0.2s ease-in-out;
+}
+
+/* ==========================================================================
+   RESET Y ESTILOS BASE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-tech);
+    background-color: var(--color-bg-asfalto);
+    color: var(--color-texto-principal);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================================================
+   NAVEGACIÓN (HEADER)
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: var(--color-bg-carbon);
+    border-bottom: var(--borde-industrial);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-text {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-texto-principal);
+    text-shadow: 2px 2px 0px var(--color-magenta-vibrante);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a:not(.btn-outline) {
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color var(--transicion-rapida);
+}
+
+.nav-links a:not(.btn-outline):hover {
+    color: var(--color-cian-electrico);
+}
+
+/* ==========================================================================
+   BOTONES
+   ========================================================================== */
+.btn-primary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--color-magenta-vibrante);
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0px var(--color-cian-electrico);
+    transition: transform var(--transicion-rapida), box-shadow var(--transicion-rapida);
+}
+
+.btn-primary:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--color-cian-electrico);
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background-color: transparent;
+    color: var(--color-cian-electrico);
+    font-family: var(--font-display);
+    border: 2px solid var(--color-cian-electrico);
+    text-transform: uppercase;
+    transition: background-color var(--transicion-rapida), color var(--transicion-rapida);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-cian-electrico);
+    color: var(--color-bg-asfalto);
+}
+
+/* ==========================================================================
+   SECCIONES PRINCIPALES
+   ========================================================================== */
+.hero-section {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Aquí puedes agregar una imagen de fondo apuntando a /imagen/hero-bg.jpg */
+    background: linear-gradient(rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.8));
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--color-cian-electrico);
+    text-shadow: 3px 3px 0px var(--color-magenta-vibrante);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--color-texto-secundario);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.planes-section {
+    padding: 5rem 5%;
+    background-color: var(--color-bg-carbon);
+    text-align: center;
+}
+
+.planes-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--color-texto-principal);
+    border-bottom: 2px solid var(--color-bronce);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+/* Grid para inyección por JS */
+.planes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+/* ==========================================================================
+   MÓDULO: TARJETAS DE PLANES (Inyectadas vía JS)
+   ========================================================================== */
+.tarjeta-plan {
+    background-color: var(--color-bg-asfalto);
+    border: var(--borde-industrial);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    transition: transform var(--transicion-rapida), box-shadow var(--transicion-rapida);
+}
+
+.tarjeta-plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 240, 255, 0.15); /* Brillo Cian sutil */
+}
+
+/* Variante para el Plan Destacado */
+.plan-destacado {
+    border: 2px solid var(--color-magenta-vibrante);
+    box-shadow: 0px 0px 15px rgba(255, 0, 60, 0.2);
+    position: relative;
+    transform: scale(1.05); /* Ligeramente más grande */
+}
+
+.plan-destacado:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(255, 0, 60, 0.4);
+}
+
+.plan-destacado::before {
+    content: 'MÁS ELEGIDO';
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-magenta-vibrante);
+    color: #fff;
+    padding: 0.3rem 1.5rem;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+}
+
+.tarjeta-header h3 {
+    color: var(--color-cian-electrico);
+    font-size: 1.8rem;
+}
+
+.precio {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--color-texto-principal);
+    margin-top: 0.5rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+}
+
+.tarjeta-body {
+    margin: 1.5rem 0;
+    flex-grow: 1; /* Empuja el botón hacia abajo */
+}
+
+.descripcion {
+    color: var(--color-texto-secundario);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.caracteristicas {
+    list-style: none;
+}
+
+.caracteristicas li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.caracteristicas li::before {
+    content: '▸';
+    color: var(--color-cian-electrico);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.tarjeta-footer .btn-primary {
+    width: 100%;
+}
+/* ==========================================================================
+   ANIMACIONES DE SCROLL (Intersection Observer)
+   ========================================================================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   MÓDULO: HORARIOS Y CLASES (Público)
+   ========================================================================== */
+.horarios-section {
+    padding: 5rem 5%;
+    background-color: var(--color-bg-asfalto);
+    text-align: center;
+}
+
+.horarios-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--color-texto-principal);
+    border-bottom: 2px solid var(--color-bronce);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.table-container-public {
+    width: 100%;
+    overflow-x: auto;
+    border: var(--borde-industrial);
+    background-color: var(--color-bg-carbon);
+}
+
+.public-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.public-table th {
+    background-color: rgba(0, 240, 255, 0.05);
+    color: var(--color-cian-electrico);
+    padding: 1.5rem;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--color-cian-electrico);
+}
+
+.public-table td {
+    padding: 1.2rem;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #222;
+}
+
+.public-table td:last-child {
+    border-right: none;
+}
+
+.public-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* ==========================================================================
+   MÓDULO: GALERÍA DE IMÁGENES
+   ========================================================================== */
+.galeria-section {
+    padding: 5rem 5%;
+    background-color: var(--color-bg-carbon);
+    text-align: center;
+}
+
+.galeria-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--color-texto-principal);
+    border-bottom: 2px solid var(--color-bronce);
+    display: inline-block;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.foto-card {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border: var(--borde-industrial);
+    position: relative;
+}
+
+.foto-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    filter: grayscale(40%) contrast(120%); /* Filtro industrial */
+}
+
+.foto-card:hover img {
+    transform: scale(1.1);
+    filter: grayscale(0%) contrast(100%);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+    background-color: #050505; /* Más oscuro que el asfalto */
+    padding: 3rem 5%;
+    text-align: center;
+    border-top: 2px solid var(--color-bronce);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.instagram-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-magenta-vibrante);
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    transition: text-shadow var(--transicion-rapida);
+}
+
+.instagram-link:hover {
+    text-shadow: 0px 0px 10px rgba(255, 0, 60, 0.5);
+}
+
+/* ==========================================================================
+   BOTÓN FLOTANTE WHATSAPP
+   ========================================================================== */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366; /* Verde oficial WP */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform var(--transicion-rapida), background-color var(--transicion-rapida);
+    border: 2px solid #fff;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #1ebe57;
+}

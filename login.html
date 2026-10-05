@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Socios | Fuerza Bruta</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="login-body">
+    
+    <!-- Eliminamos la clase fade-in para que cargue inmediatamente -->
+    <div class="login-container">
+        <div class="login-header">
+            <span class="logo-text">FUERZA BRUTA</span>
+            <p>Portal de Autogestión</p>
+        </div>
+        
+        <form id="login-form" class="login-form">
+            <div class="input-group">
+                <label for="dni">DNI del Socio</label>
+                <input type="number" id="dni" placeholder="Ingresa tu DNI sin puntos" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn-primary btn-login">Ingresar al Sistema</button>
+        </form>
+
+        <div class="login-footer">
+            <a href="index.html" class="link-secundario">← Volver al inicio</a>
+        </div>
+    </div>
+
+    <!-- Script temporal para la demo comercial -->
+    <script>
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('En el producto final, esto validará con Supabase y abrirá la rutina del socio. Para esta demo, te redirigiremos al panel de administración.');
+            window.location.href = 'admin.html';
+        });
+    </script>
+</body>
+</html>

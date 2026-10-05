@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control | Fuerza Bruta</title>
+    <!-- Importamos estilos globales primero, luego los específicos del admin -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+    
+    <!-- Barra Lateral de Navegación -->
+    <aside class="sidebar">
+        <div class="logo-container">
+            <span class="logo-text">FB ADMIN</span>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="#">Gestión de Socios</a></li>
+                <li><a href="#">Check-ins diarios</a></li>
+                <li><a href="index.html" class="btn-outline">Volver a la Web</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Contenedor Principal del Panel -->
+    <main class="admin-content">
+        <header class="admin-header">
+            <h2>Socios Registrados</h2>
+            <button class="btn-primary" id="btn-nuevo-socio">+ Nuevo Socio</button>
+        </header>
+
+        <section class="admin-panel">
+            <div class="table-container">
+                <table class="industrial-table">
+                    <thead>
+                        <tr>
+                            <th>ID Socio</th>
+                            <th>Nombre Completo</th>
+                            <th>Plan Activo</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <!-- El cuerpo de la tabla se inyectará vía JavaScript -->
+                    <tbody id="tabla-socios"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lógica del Panel -->
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>
